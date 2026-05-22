@@ -50,6 +50,8 @@ function PortraitDetails({
             <img
               src={image}
               alt={name}
+              loading="lazy"
+              decoding="async"
               className="w-full object-cover object-top"
               style={{ aspectRatio: "3/4", display: "block" }}
             />
@@ -162,7 +164,7 @@ export function Couple() {
               name="R. Hemalatha"
               role="The Bride"
               tamilRole="மணமகள்"
-              company="Design Lead · Chennai"
+              company="DCA., PGDCA"
               align="right"
               image={brideImg}
               desc="A vision of elegance and gentle warmth, illuminating our path with quiet wisdom, compassion, and love."

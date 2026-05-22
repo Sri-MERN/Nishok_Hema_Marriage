@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Suspense, lazy, useEffect, useState, useRef } from "react";
+import { Suspense, lazy, useEffect, useState, useRef, useCallback } from "react";
 import { Intro } from "@/components/wedding/Intro";
 import { Hero } from "@/components/wedding/Hero";
 import { Divider } from "@/components/wedding/Divider";
-import musicFile from "@/assets/music.mp3";
 import { motion } from "framer-motion";
 
 const LazyCountdown = lazy(() => import("@/components/wedding/Countdown").then(m => ({ default: m.Countdown })));
@@ -31,20 +30,17 @@ function Index() {
     };
   }, [open]);
 
-  useEffect(() => {
-    audioRef.current = new Audio(musicFile);
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.55;
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
+  const initAudio = useCallback(async () => {
+    if (audioRef.current) return;
+    const { default: url } = await import("@/assets/music.mp3");
+    const audio = new Audio(url);
+    audio.loop = true;
+    audio.volume = 0.55;
+    audioRef.current = audio;
   }, []);
 
-  const handlePlayMusic = () => {
+  const handlePlayMusic = useCallback(async () => {
+    await initAudio();
     if (audioRef.current) {
       audioRef.current
         .play()
@@ -56,9 +52,10 @@ function Index() {
           ),
         );
     }
-  };
+  }, [initAudio]);
 
-  const handleTogglePlay = () => {
+  const handleTogglePlay = useCallback(async () => {
+    await initAudio();
     if (!audioRef.current) return;
     if (isPlaying) {
       audioRef.current.pause();
@@ -69,21 +66,21 @@ function Index() {
         .then(() => setIsPlaying(true))
         .catch((err) => console.log("Audio playback failed:", err));
     }
-  };
+  }, [initAudio, isPlaying]);
 
   return (
     <div className="relative bg-background text-foreground overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 bg-ambient opacity-60"
+        className="pointer-events-none fixed inset-0 z-0 bg-floral opacity-70"
       />
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 [background:radial-gradient(ellipse_at_top,transparent_55%,oklch(0_0_0/0.5)_100%)]"
+        className="pointer-events-none fixed inset-0 z-0 [background:radial-gradient(ellipse_at_top,transparent_55%,oklch(0.88_0.08_84/0.12)_100%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[1] opacity-35 sm:opacity-40"
+        className="pointer-events-none fixed inset-0 z-[1] opacity-25 sm:opacity-30"
       />
       <Intro
         open={open}

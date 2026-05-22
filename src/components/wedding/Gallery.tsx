@@ -99,6 +99,7 @@ export function Gallery() {
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
