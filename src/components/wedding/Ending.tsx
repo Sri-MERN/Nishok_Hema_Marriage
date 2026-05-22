@@ -83,10 +83,10 @@ export function Ending() {
             ஆசிர்வாதங்களுடன்
           </p>
           <h3 className="font-display text-xl sm:text-4xl md:text-5xl shimmer-text leading-tight">
-            R. Gururajan &amp; S. Shagathiya
+            S. Nishok &amp; R. Hemalatha
           </h3>
           <p className="mt-3 sm:mt-5 text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-gold/60">
-            07 · 06 · 2026
+            31 · 05 · 2026
           </p>
         </motion.div>
 

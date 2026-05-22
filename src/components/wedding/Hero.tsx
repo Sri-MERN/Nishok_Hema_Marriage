@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 1.2 }}
             className="text-[10px] sm:text-xs tracking-[0.5em] sm:tracking-[0.6em] uppercase text-gold/80 mb-6 sm:mb-8"
           >
-            — The Wedding of —
+            — The Wedding Reception of —
           </motion.p>
 
           <motion.h1
@@ -40,9 +40,9 @@ export function Hero() {
             style={{ filter: "drop-shadow(0 4px 12px oklch(0 0 0 / 0.55))" }}
           >
             <span className="text-gold/60 text-[0.3em] sm:text-[0.35em] align-super font-sans tracking-[0.2em] sm:tracking-[0.3em]">
-              R.
+              S.
             </span>
-            Gururajan
+            Nishok
           </motion.h1>
 
           <div className="my-4 sm:my-6 flex items-center justify-center gap-3 sm:gap-5">
@@ -84,9 +84,9 @@ export function Hero() {
             style={{ filter: "drop-shadow(0 4px 12px oklch(0 0 0 / 0.55))" }}
           >
             <span className="text-gold/60 text-[0.3em] sm:text-[0.35em] align-super font-sans tracking-[0.2em] sm:tracking-[0.3em]">
-              S.
+              R.
             </span>
-            Shagathiya
+            Hemalatha
           </motion.h1>
 
           <motion.p
@@ -95,8 +95,7 @@ export function Hero() {
             transition={{ delay: 1.7, duration: 1.2 }}
             className="mt-8 sm:mt-10 text-sm sm:text-lg text-ivory/75 font-light max-w-xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Together with our families, we invite you to celebrate the beginning
-            of our forever.
+            With immense joy, we invite you and your family to celebrate the beginning of our forever.
           </motion.p>
 
           <motion.p
@@ -105,7 +104,7 @@ export function Hero() {
             transition={{ delay: 2.0, duration: 1.2 }}
             className="mt-6 sm:mt-8 text-[10px] sm:text-sm tracking-[0.4em] sm:tracking-[0.5em] uppercase text-gold/80"
           >
-            June 07, 2026 · Chennai
+            May 31, 2026 · Chennai
           </motion.p>
         </div>
       </div>

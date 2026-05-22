@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { Ornament } from "./Ornament";
 
-const TARGET = new Date("2026-06-07T07:30:00+05:30").getTime();
+const TARGET = new Date("2026-05-31T18:30:00+05:30").getTime();
 
 function useCountdown() {
   const [now, setNow] = useState(() => Date.now());

@@ -6,13 +6,13 @@ const actions = [
   {
     label: "WhatsApp RSVP",
     sub: "Send us a message",
-    href: "https://wa.me/918428892641?text=I%20will%20be%20attending%20R.%20Gururajan%20%26%20S.%20Shagathiya%27s%20wedding",
+    href: "https://wa.me/918428892641?text=I%20will%20be%20attending%20S.%20Nishok%20%26%20R.%20Hemalatha%27s%20Wedding%20Reception",
   },
   { label: "Call Us", sub: "We'd love to hear you", href: "tel:+918428892641" },
   {
     label: "Navigate to Venue",
-    sub: "D.R. Mahal, Santhapet",
-    href: "https://maps.app.goo.gl/euVwhDnwRAAoPEUL7?g_st=iw",
+    sub: "Golden Paradise, Chennai",
+    href: "https://www.google.com/maps/search/?api=1&query=Golden+Paradise+Thirumana+Mandapam+Saligramam+Chennai",
   },
 ];
 

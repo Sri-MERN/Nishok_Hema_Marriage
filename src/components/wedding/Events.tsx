@@ -15,24 +15,14 @@ type Event = {
 
 const events: Event[] = [
   {
-    title: "Marriage Ceremony",
-    date: "Sunday · June 07, 2026",
-    time: "7:30 AM – 9:00 AM",
-    venue: "D.R. Mahal",
-    address: "Santhapet, T.K. Mandapam",
-    mapUrl: "https://maps.app.goo.gl/euVwhDnwRAAoPEUL7?g_st=iw",
+    title: "Wedding Reception",
+    date: "Sunday · 31 May 2026",
+    time: "6:30 PM onwards",
+    venue: "Golden Paradise Thirumana Mandapam",
+    address: "No. 10/6, Sathya Garden, 80 Feet Road, Saligramam, Chennai – 600093",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Golden+Paradise+Thirumana+Mandapam+Saligramam+Chennai",
     calUrl:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=R.+Gururajan+%26+S.+Shagathiya+Wedding&dates=20260607T020000Z/20260607T033000Z&details=Marriage+Ceremony&location=D.R.+Mahal,+Santhapet,+T.K.+Mandapam",
-  },
-  {
-    title: "Reception",
-    date: "Wednesday · June 10, 2026",
-    time: "6:00 PM onwards",
-    venue: "Royal Mahal",
-    address: "Vellalar Street, Pattur, Chennai – 600122",
-    mapUrl: "https://maps.app.goo.gl/95ZHTS6tsVyDLoT97?g_st=iw",
-    calUrl:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=R.+Gururajan+%26+S.+Shagathiya+Reception&dates=20260610T123000Z/20260610T160000Z&details=Wedding+Reception&location=Royal+Mahal,+Vellalar+Street,+Pattur,+Chennai+600122",
+      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=S.+Nishok+%26+R.+Hemalatha+Wedding+Reception&dates=20260531T130000Z/20260531T170000Z&details=Wedding+Reception+of+S.+Nishok+%26+R.+Hemalatha&location=Golden+Paradise+Thirumana+Mandapam,+No.+10/6,+Sathya+Garden,+80+Feet+Road,+Saligramam,+Chennai+-+600093",
   },
 ];
 
@@ -129,15 +119,15 @@ export function Events() {
           <Ornament className="mt-6 sm:mt-8 opacity-70" />
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-12">
+        <div className="flex justify-center">
           {events.map((e, i) => {
             const [dayName, fullDate] = e.date.split(" · ");
             return (
-              <Reveal key={e.title} delay={i * 0.15}>
+              <Reveal key={e.title} delay={i * 0.15} className="w-full max-w-2xl">
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  className={`group relative glass rounded-sm p-6 sm:p-12 overflow-hidden shadow-cinematic ${i % 2 === 1 ? "md:translate-y-12" : ""}`}
+                  className="group relative glass rounded-sm p-6 sm:p-12 overflow-hidden shadow-cinematic"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-transparent to-maroon/30 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                   <div
@@ -157,7 +147,7 @@ export function Events() {
 
                   <div className="relative">
                     <p className="text-[10px] tracking-[0.5em] uppercase text-gold/70 mb-3 sm:mb-4">
-                      {i === 0 ? "Mangalya Dharanam" : "Reception"}
+                      Grand Reception
                     </p>
                     <h3 className="font-display text-2xl sm:text-4xl text-ivory mb-6 sm:mb-8">
                       {e.title}

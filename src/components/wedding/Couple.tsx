@@ -1,24 +1,83 @@
 import { Reveal } from "./Reveal";
 import { Ornament } from "./Ornament";
+import groomImg from "@/assets/groom gen.webp";
+import brideImg from "@/assets/bride.webp";
 
 function PortraitDetails({
   name,
+  nickname,
   role,
   company,
   align,
   desc,
   tamilRole,
+  image,
 }: {
   name: string;
+  nickname?: string;
   role: string;
   company: string;
   align: "left" | "right";
   desc: string;
   tamilRole: string;
+  image: string;
 }) {
   return (
     <Reveal y={60} className="w-full">
-      <div className="flex flex-col items-center md:items-start">
+      <div className="flex flex-col items-center">
+
+        {/* ── Portrait Frame ── */}
+        <div className="relative mb-8 sm:mb-10 w-52 sm:w-64 md:w-72">
+          {/* Outer gold glow halo */}
+          <div
+            className="absolute -inset-3 rounded-sm pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, oklch(0.81 0.11 82 / 0.18), transparent 70%)",
+              filter: "blur(16px)",
+            }}
+          />
+          {/* Gold gradient border frame */}
+          <div
+            className="absolute -inset-[1.5px] rounded-sm pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.86 0.08 84 / 0.9), oklch(0.55 0.09 55 / 0.4) 40%, oklch(0.86 0.08 84 / 0.9))",
+            }}
+          />
+          {/* Photo container */}
+          <div className="relative overflow-hidden rounded-sm">
+            <img
+              src={image}
+              alt={name}
+              className="w-full object-cover object-top"
+              style={{ aspectRatio: "3/4", display: "block" }}
+            />
+            {/* Cinematic bottom vignette */}
+            <div
+              className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, oklch(0.07 0.012 25 / 0.75), transparent)",
+              }}
+            />
+            {/* Subtle maroon tint */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(160deg, oklch(0.28 0.11 18 / 0.08), transparent 60%)",
+              }}
+            />
+          </div>
+          {/* Corner ornaments */}
+          <span className="absolute top-2 left-2 w-4 h-4 border-t border-l border-gold/60 pointer-events-none" />
+          <span className="absolute top-2 right-2 w-4 h-4 border-t border-r border-gold/60 pointer-events-none" />
+          <span className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-gold/60 pointer-events-none" />
+          <span className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-gold/60 pointer-events-none" />
+        </div>
+
+        {/* ── Role badge ── */}
         <div className="flex items-center gap-2 mb-2">
           <span className="text-[10px] tracking-[0.4em] uppercase text-gold-soft">
             {role}
@@ -29,22 +88,34 @@ function PortraitDetails({
           </span>
         </div>
 
-        <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl text-ivory tracking-wide leading-tight shimmer-text text-center md:text-left">
+        {/* ── Main Name ── */}
+        <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl text-ivory tracking-wide leading-tight shimmer-text text-center">
           {name}
         </h3>
 
-        <div
-          className={`h-[1px] w-16 sm:w-20 bg-gradient-to-r from-gold/50 to-transparent my-3 sm:my-4 ${align === "right" ? "md:ml-auto md:mr-0" : "md:ml-0 md:mr-auto"} mx-auto md:mx-0`}
-        />
+        {/* ── Nickname (optional) ── */}
+        {nickname && (
+          <span className="mt-1 sm:mt-1.5 font-serif italic text-lg sm:text-xl lg:text-2xl text-gold/80 tracking-widest text-center block">
+            {nickname}
+          </span>
+        )}
 
-        <p className="text-xs sm:text-sm font-light text-gold-soft/90 tracking-wide font-sans mb-1 text-center md:text-left">
+        {/* ── Gold divider ── */}
+        <div className="h-[1px] w-16 sm:w-20 bg-gradient-to-r from-gold/50 to-transparent my-3 sm:my-4 mx-auto" />
+
+        {/* ── Profession line 1 ── */}
+        <p className="text-xs sm:text-sm font-light text-gold-soft/90 tracking-wide font-sans mb-1 text-center">
           {company.split(" · ")[0]}
         </p>
-        <p className="text-[11px] sm:text-xs text-ivory/60 tracking-wider font-sans mb-3 sm:mb-4 uppercase text-center md:text-left">
-          {company.split(" · ")[1]}
-        </p>
+        {/* ── Profession line 2 (if present) ── */}
+        {company.split(" · ")[1] && (
+          <p className="text-[11px] sm:text-xs text-ivory/60 tracking-wider font-sans mb-3 sm:mb-4 uppercase text-center">
+            {company.split(" · ")[1]}
+          </p>
+        )}
 
-        <p className="text-sm italic font-display text-ivory/70 w-full leading-relaxed text-center md:text-left">
+        {/* ── Bio quote ── */}
+        <p className="text-sm italic font-display text-ivory/70 w-full leading-relaxed text-center">
           "{desc}"
         </p>
       </div>
@@ -75,22 +146,25 @@ export function Couple() {
         <div className="grid md:grid-cols-2 gap-12 sm:gap-16 md:gap-24">
           <div>
             <PortraitDetails
-              name="R. Gururajan"
+              name="S. Nishok"
+              nickname="(Ayyapan)"
               role="The Groom"
               tamilRole="மணமகன்"
-              company="Software Engineer · Neurealm Chennai"
+              company="DCA., · (VFX Artist)"
               align="left"
+              image={groomImg}
               desc="An anchor of strength and brilliant intellect, navigating our future with deep devotion and silent grace."
             />
           </div>
 
           <div className="md:mt-24">
             <PortraitDetails
-              name="S. Shagathiya"
+              name="R. Hemalatha"
               role="The Bride"
               tamilRole="மணமகள்"
-              company="Technology Analyst · Infosys Chennai"
+              company="Design Lead · Chennai"
               align="right"
+              image={brideImg}
               desc="A vision of elegance and gentle warmth, illuminating our path with quiet wisdom, compassion, and love."
             />
           </div>

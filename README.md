@@ -1,193 +1,83 @@
-# R. Gururajan & S. Shagathiya — Wedding Invitation
+# S. Nishok & R. Hemalatha — Wedding Reception Invitation
 
-A cinematic, luxury single-page wedding invitation microsite built with **React**, **Vite**, **TanStack Router**, **Tailwind CSS v4**, and **Framer Motion**.
+A cinematic luxury wedding invitation microsite. Scroll-based single-page experience with parallax, animations, and ambient music.
 
-> **Wedding Date:** June 7, 2026 | **Venue:** D.R. Mahal, Santhapet, Chennai
-
----
-
-## Features
-
-- **Cinematic Preloader & Intro** — Full-screen animated invitation overlay with monogram, floating particles, celebration burst, and background music
-- **Parallax Hero** — Scrolling cinematic hero with shimmering typography, slow-floating portraits, and ambient glow
-- **Live Countdown** — Real-time countdown to the wedding ceremony with glass-card tiles
-- **3D Tilt Couple Portraits** — Asymmetrical editorial layout with spring-based mouse-tracking parallax, golden borders, and Tamil titles
-- **Love Story Timeline** — Three chapters: Family Blessings, The Engagement, The Wedding
-- **Premium Section Dividers** — Glowing gold lines with temple-inspired star motifs and pulsating accent dots
-- **Events Cards** — Ceremony & Reception with date/time/venue, directions, and Google Calendar links
-- **Photo Gallery** — Responsive masonry-like grid with 8 images and full-screen lightbox
-- **Family Blessings** — Collapsible accordion cards for both families
-- **RSVP Actions** — WhatsApp, Call, and Navigate buttons
-- **Continuous Cinematic Ending** — Single merged section flowing from emotional quote through monogram and couple names to closing line, with warm gold vignette and floating particles
-- **Background Audio** — Looping ambient music with elegant floating toggle button with animated soundwave bars
-- **Mobile Perfection** — App-like, smooth, and luxurious on mobile with responsive typography, optimized touch targets, reduced particle counts for performance, and immersive full-screen sections
-- **Atmosphere** — Floating golden petals, twinkling diya-like particles, grain texture overlay, warm gold ambient glow, cinematic lighting gradients
+**Reception:** May 31, 2026 | Saligramam, Chennai
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- **Node.js** >= 20
-- **npm** >= 10
-
-### Installation
+## Quick Start
 
 ```bash
-npm install
+npm install        # install dependencies
+npm run dev        # start dev server at localhost:8080
+npm run build      # production build → dist/
+npm run preview    # preview production build
 ```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Starts the Vite dev server at **http://localhost:8080** with Hot Module Replacement.
-
-### Build
-
-```bash
-npm run build
-```
-
-Produces a production build in `dist/` ready for static hosting.
-
-### Preview
-
-```bash
-npm run preview
-```
-
-Preview the production build locally.
 
 ---
 
-## Available Scripts
+## How the Site Flows
 
-| Script | Description |
-|---|---|
-| `npm run dev` | Start development server (port 8080) |
-| `npm run build` | Build for production |
-| `npm run build:dev` | Build in development mode |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Lint all files with ESLint |
-| `npm run format` | Format all files with Prettier |
+The page is one continuous scroll. Each section fades in as you scroll:
+
+| # | Section | File | What it does |
+|---|---------|------|-------------|
+| 1 | **Intro** | `Intro.tsx` | Full-screen overlay with "Open Invitation" button, monogram, floating particles |
+| 2 | **Hero** | `Hero.tsx` | Cinematic parallax banner with couple names and portraits |
+| 3 | **Countdown** | `Countdown.tsx` | Live timer counting down to the reception |
+| 4 | **Couple** | `Couple.tsx` | "Two Souls, One Destiny" — groom & bride portraits with details |
+| 5 | **Story** | `Story.tsx` | 3-chapter love story timeline |
+| 6 | **Events** | `Events.tsx` | Reception details with date, venue, map, Google Calendar link |
+| 7 | **Family** | `Family.tsx` | Accordion cards for both families' blessings |
+| 8 | **RSVP** | `RSVP.tsx` | WhatsApp, Call, and Navigate buttons |
+| 9 | **Ending** | `Ending.tsx` | Closing quote, monogram, couple names, floating particles |
+
+Between every section: a gold-divider with star motif (`Divider.tsx`)
 
 ---
 
-## Project Structure
+## Key Files
 
 ```
 src/
-├── assets/                        # Images, audio (music.mp3, music.ogg)
-│   ├── groom.jpg / groom.png
-│   ├── bride.jpg / bride.png
-│   ├── hero-bg.jpg
-│   ├── gallery-1.jpg through gallery-6.jpg
-│   ├── music.mp3 / music.ogg
-├── components/
-│   ├── ui/                        # ~38 shadcn/ui components (Button, Card, Dialog, etc.)
-│   └── wedding/                   # Wedding-specific components
-│       ├── Intro.tsx               # Full-screen invitation overlay
-│       ├── Hero.tsx                # Parallax cinematic hero
-│       ├── Countdown.tsx           # Live countdown timer
-│       ├── Couple.tsx              # 3D tilt portrait cards
-│       ├── Story.tsx               # Love story timeline
-│       ├── Events.tsx              # Wedding ceremony & reception cards
-│       ├── Gallery.tsx             # Photo grid with lightbox
-│       ├── Family.tsx              # Collapsible family accordions
-│       ├── RSVP.tsx                # RSVP action buttons
-│       ├── Ending.tsx              # Continuous cinematic ending (quote + monogram + couple names + closing)
-│       ├── Celebration.tsx         # Full-screen celebration burst
-│       ├── Monogram.tsx            # Animated G&S emblem
-│       ├── Petals.tsx              # Floating golden petals
-│       ├── Particles.tsx           # Twinkling diya particles
-│       ├── Divider.tsx             # Premium section dividers
-│       ├── Ornament.tsx            # Star/sparkle ornament
-│       ├── Preloader.tsx           # Initial loading screen
-│       └── Reveal.tsx              # Scroll-triggered fade-in wrapper
-├── hooks/
-│   └── use-mobile.tsx
-├── lib/
-│   └── utils.ts                   # cn() utility (clsx + tailwind-merge)
-├── routes/
-│   ├── __root.tsx                  # Root layout, error/404 pages
-│   └── index.tsx                   # Single-page route composing all sections
-├── main.tsx                        # React entry point
-├── routeTree.gen.ts               # Auto-generated router tree
-├── router.tsx                     # TanStack Router setup
-├── styles.css                     # Tailwind CSS v4 + custom theme
-├── index.html                     # Vite HTML entry point
+├── styles.css               # All colors, fonts, animations (shimmer, glass, particles)
+├── components/wedding/      # Each section = one file
+│   ├── Couple.tsx           # Groom (S. Nishok) & Bride (R. Hemalatha) portraits
+│   ├── Hero.tsx             # Top banner
+│   ├── Intro.tsx            # Entry overlay
+│   ├── Ending.tsx           # Closing section
+│   ├── Countdown.tsx        # Timer
+│   ├── Story.tsx            # Love timeline
+│   ├── Events.tsx           # Venue & date
+│   ├── Family.tsx           # Family blessings
+│   ├── Gallery.tsx          # Photo grid
+│   ├── RSVP.tsx             # Action buttons
+│   ├── Reveal.tsx           # Scroll animation wrapper
+│   └── Ornament.tsx         # Decorative motif
+├── assets/                  # Images + music.mp3
+└── routes/index.tsx         # Page layout (order of sections)
 ```
+
+---
+
+## Customizing Content
+
+**Couple names & details** — edit `Couple.tsx` (groom/name/company props)  
+**Hero names** — edit `Hero.tsx`  
+**Family member names** — edit `Family.tsx`  
+**Event date/venue** — edit `Events.tsx`  
+**Gallery photos** — replace files in `src/assets/` and update `Gallery.tsx`  
+**Background music** — replace `src/assets/music.mp3`
 
 ---
 
 ## Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **React** v19 | UI framework |
-| **Vite** v7 | Build tool & dev server |
-| **TanStack Router** v1.168 | Type-safe routing |
-| **Tailwind CSS** v4 | Utility-first styling |
-| **Framer Motion** v12 | Animations, scroll effects, 3D tilt |
-| **shadcn/ui** (Radix primitives) | Reusable UI components |
-| **TypeScript** | Type safety |
+React 19 · Vite 7 · TanStack Router · Tailwind CSS v4 · Framer Motion 12 · shadcn/ui · TypeScript
 
 ---
 
-## Deployment
+## Theme Colors
 
-This is a static site. Deploy the `dist/` folder to any hosting provider.
-
-### Deploy to Vercel
-
-```bash
-npm run build
-vercel --prod --yes
-```
-
-Or connect your GitHub repo to Vercel for automatic deployments.
-
----
-
-## Configuration Files
-
-| File | Purpose |
-|---|---|
-| `vite.config.ts` | Vite plugins, dev server, aliases |
-| `tsconfig.json` | TypeScript settings |
-| `eslint.config.js` | ESLint + Prettier integration |
-| `components.json` | shadcn/ui settings |
-
----
-
-## Custom Theme
-
-The app uses a **dark South Indian wedding color palette** (OKLCH) defined in Tailwind:
-
-- **Maroon** (`--color-maroon`) — Primary background
-- **Gold** (`--color-gold`) — Accent text & borders
-- **Ivory** (`--color-ivory`) — Body text
-- **Sandalwood** (`--color-sandalwood`) — Muted accents
-- **Bronze** (`--color-bronze`) — Secondary accents
-
-Custom gradients, glass effects, and animations (floating petals, diya flicker, shimmer, soundwave bars, gold pulse, vignette pulse, ambient float) are all in `src/styles.css`.
-
----
-
-## Visual Design Highlights
-
-- **Mobile-first luxury** — Responsive typography scaling, optimized touch targets, reduced particle counts on mobile, app-like smooth scrolling
-- **Premium dividers** — Glowing gold gradient lines with temple-inspired star motifs and pulsing golden dot between every section
-- **Continuous cinematic ending** — Single merged section flowing from emotional quote through glowing monogram and couple names to "Made with love," with warm gold vignette and floating particles
-- **Performance optimized** — `will-change` hints for GPU-accelerated animations, reduced motion considerations, lazy-loaded gallery images
-- **Typography** — Cormorant Garamond (display), Inter (body), Catamaran (Tamil) with careful tracking and leading
-
----
-
-## License
-
-Private — All rights reserved.
+Maroon (bg) · Gold (accents) · Ivory (text) · Sandalwood (muted) — all defined in `styles.css`

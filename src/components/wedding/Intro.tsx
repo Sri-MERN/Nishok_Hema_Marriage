@@ -51,19 +51,19 @@ export function Intro({
               style={{ filter: "drop-shadow(0 4px 10px oklch(0 0 0 / 0.5))" }}
             >
               <span className="text-gold/60 text-[0.4em] sm:text-[0.5em] align-super font-sans tracking-[0.2em] sm:tracking-[0.3em]">
-                R.
+                S.
               </span>
-              Gururajan
+              Nishok
               <span className="block text-gold/80 text-xl sm:text-3xl my-2 sm:my-3 font-light">
                 &
               </span>
               <span className="text-gold/60 text-[0.4em] sm:text-[0.5em] align-super font-sans tracking-[0.2em] sm:tracking-[0.3em]">
-                S.
+                R.
               </span>
-              Shagathiya
+              Hemalatha
             </h1>
             <p className="mt-6 sm:mt-8 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase text-ivory/70">
-              07 · 06 · 2026
+              31 · 05 · 2026
             </p>
 
             <motion.button

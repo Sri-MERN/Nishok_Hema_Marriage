@@ -28,9 +28,9 @@ const images = [
   },
   {
     src: groomImg,
-    alt: "R. Gururajan portrait",
+    alt: "S. Nishok portrait",
     span: "row-span-2",
-    caption: "R. Gururajan",
+    caption: "S. Nishok",
     subtitle: "The Groom · மணமகன்",
   },
   {
@@ -49,9 +49,9 @@ const images = [
   },
   {
     src: brideImg,
-    alt: "S. Shagathiya portrait",
+    alt: "R. Hemalatha portrait",
     span: "row-span-2",
-    caption: "S. Shagathiya",
+    caption: "R. Hemalatha",
     subtitle: "The Bride · மணமகள்",
   },
   {

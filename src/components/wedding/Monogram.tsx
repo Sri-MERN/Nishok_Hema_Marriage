@@ -99,13 +99,13 @@ export function Monogram({
         }}
       >
         <span className="font-display italic text-[1.5em] leading-none gradient-gold-text drop-shadow">
-          G
+          N
         </span>
         <span className="mx-[0.2em] text-gold/80" style={{ fontSize: "0.7em" }}>
           ✦
         </span>
         <span className="font-display italic text-[1.5em] leading-none gradient-gold-text drop-shadow">
-          S
+          H
         </span>
       </div>
     </motion.div>

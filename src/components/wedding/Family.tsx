@@ -6,13 +6,13 @@ import { Ornament } from "./Ornament";
 const blessings = [
   {
     title: "From the Groom's Family",
-    name: "Family of R. Gururajan",
-    text: "With abundant joy and blessings, we welcome you to share in this sacred moment as our son begins a new chapter with his beloved.",
+    name: "Family of S. Nishok",
+    text: "With immense joy and gratitude, we welcome you to bless our son S. Nishok as he begins a beautiful new journey with his beloved.",
   },
   {
     title: "From the Bride's Family",
-    name: "Family of S. Shagathiya",
-    text: "It is with grateful hearts that we invite you to bless our daughter as she steps into a beautiful new beginning beside the one she loves.",
+    name: "Family of R. Hemalatha",
+    text: "It is with grateful hearts that we invite you to bless our daughter R. Hemalatha as she steps into a lifetime of love and happiness beside the one she loves.",
   },
 ];
 

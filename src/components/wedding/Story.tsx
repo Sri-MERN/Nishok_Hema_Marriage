@@ -14,8 +14,8 @@ const chapters = [
   },
   {
     no: "III",
-    title: "The Wedding",
-    text: "And now, surrounded by everyone we love, we tie the sacred thread — stepping forward into a lifetime written together.",
+    title: "The Reception",
+    text: "And now, surrounded by everyone we love, we celebrate our beautiful union — stepping forward into a lifetime written together.",
   },
 ];
 
