@@ -6,9 +6,9 @@ const actions = [
   {
     label: "WhatsApp RSVP",
     sub: "Send us a message",
-    href: "https://wa.me/918428892641?text=I%20will%20be%20attending%20S.%20Nishok%20%26%20R.%20Hemalatha%27s%20Wedding%20Reception",
+    href: "https://wa.me/918807889828?text=I%20will%20be%20attending%20S.%20Nishok%20%26%20R.%20Hemalatha%27s%20Wedding%20Reception",
   },
-  { label: "Call Us", sub: "We'd love to hear you", href: "tel:+918428892641" },
+  { label: "Call Us", sub: "We'd love to hear you", href: "tel:+918807889828" },
   {
     label: "Navigate to Venue",
     sub: "Golden Paradise, Chennai",

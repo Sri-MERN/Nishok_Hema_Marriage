@@ -15,14 +15,18 @@ export default defineConfig({
     },
   },
   build: {
+    cssMinify: true,
+    minify: "esbuild",
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ["react", "react-dom"],
           motion: ["framer-motion"],
-          ui: ["@radix-ui/react-dialog", "@radix-ui/react-select", "@radix-ui/react-tabs"],
         },
       },
     },
+    assetsInlineLimit: 4096,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 500,
   },
 });
