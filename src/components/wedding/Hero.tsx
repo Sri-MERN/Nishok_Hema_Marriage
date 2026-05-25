@@ -156,7 +156,8 @@ export function Hero() {
             transition={{ delay: 2.0, duration: 1.2 }}
             className="mt-4 sm:mt-6 text-sm sm:text-lg text-gold-soft/80 font-light max-w-xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            With immense joy, we invite you and your family to celebrate the beginning of our forever.
+            With immense joy, we invite you and your family to celebrate the
+            beginning of our forever.
           </motion.p>
 
           <motion.p

@@ -1,7 +1,7 @@
 import { Reveal } from "./Reveal";
 import { Ornament } from "./Ornament";
-import groomImg from "@/assets/groom gen.webp";
-import brideImg from "@/assets/bride.webp";
+import coupleStreetImg from "@/assets/couple_street.webp";
+import coupleBeachImg from "@/assets/couple_beach.webp";
 
 function PortraitDetails({
   name,
@@ -25,21 +25,20 @@ function PortraitDetails({
   return (
     <Reveal y={60} className="w-full">
       <div className="flex flex-col items-center">
-
         {/* ── Portrait Frame ── */}
-        <div className="relative mb-8 sm:mb-10 w-52 sm:w-64 md:w-72">
+        <div className="relative mb-8 sm:mb-10 w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]">
           {/* Outer gold glow halo */}
           <div
-            className="absolute -inset-3 rounded-sm pointer-events-none"
+            className="absolute -inset-4 rounded-sm pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at center, oklch(0.81 0.11 82 / 0.18), transparent 70%)",
-              filter: "blur(16px)",
+                "radial-gradient(ellipse at center, oklch(0.81 0.11 82 / 0.22), transparent 70%)",
+              filter: "blur(24px)",
             }}
           />
           {/* Gold gradient border frame */}
           <div
-            className="absolute -inset-[1.5px] rounded-sm pointer-events-none"
+            className="absolute -inset-[2px] rounded-sm pointer-events-none"
             style={{
               background:
                 "linear-gradient(135deg, oklch(0.86 0.08 84 / 0.9), oklch(0.55 0.09 55 / 0.4) 40%, oklch(0.86 0.08 84 / 0.9))",
@@ -52,7 +51,7 @@ function PortraitDetails({
               alt={name}
               loading="lazy"
               decoding="async"
-              className="w-full object-cover object-top"
+              className="w-full object-cover object-center"
               style={{ aspectRatio: "3/4", display: "block" }}
             />
             {/* Cinematic bottom vignette */}
@@ -150,11 +149,11 @@ export function Couple() {
             <PortraitDetails
               name="S. Nishok"
               nickname="(Ayyapan)"
-              role="The Groom"
-              tamilRole="மணமகன்"
+              role="Chapter I — Walk of Love"
+              tamilRole="மணமகன் (அன்பின் பாதை)"
               company="DCA., · (VFX Artist)"
               align="left"
-              image={groomImg}
+              image={coupleStreetImg}
               desc="An anchor of strength and brilliant intellect, navigating our future with deep devotion and silent grace."
             />
           </div>
@@ -162,11 +161,11 @@ export function Couple() {
           <div className="md:mt-24">
             <PortraitDetails
               name="R. Hemalatha"
-              role="The Bride"
-              tamilRole="மணமகள்"
+              role="Chapter II — Eternity Shore"
+              tamilRole="மணமகள் (முடிவிலா காதல்)"
               company="DCA., PGDCA"
               align="right"
-              image={brideImg}
+              image={coupleBeachImg}
               desc="A vision of elegance and gentle warmth, illuminating our path with quiet wisdom, compassion, and love."
             />
           </div>

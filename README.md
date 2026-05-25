@@ -21,17 +21,17 @@ npm run preview    # preview production build
 
 The page is one continuous scroll. Each section fades in as you scroll:
 
-| # | Section | File | What it does |
-|---|---------|------|-------------|
-| 1 | **Intro** | `Intro.tsx` | Full-screen overlay with "Open Invitation" button, monogram, floating particles |
-| 2 | **Hero** | `Hero.tsx` | Cinematic parallax banner with couple names and portraits |
-| 3 | **Countdown** | `Countdown.tsx` | Live timer counting down to the reception |
-| 4 | **Couple** | `Couple.tsx` | "Two Souls, One Destiny" — groom & bride portraits with details |
-| 5 | **Story** | `Story.tsx` | 3-chapter love story timeline |
-| 6 | **Events** | `Events.tsx` | Reception details with date, venue, map, Google Calendar link |
-| 7 | **Family** | `Family.tsx` | Accordion cards for both families' blessings |
-| 8 | **RSVP** | `RSVP.tsx` | WhatsApp, Call, and Navigate buttons |
-| 9 | **Ending** | `Ending.tsx` | Closing quote, monogram, couple names, floating particles |
+| #   | Section       | File            | What it does                                                                    |
+| --- | ------------- | --------------- | ------------------------------------------------------------------------------- |
+| 1   | **Intro**     | `Intro.tsx`     | Full-screen overlay with "Open Invitation" button, monogram, floating particles |
+| 2   | **Hero**      | `Hero.tsx`      | Cinematic parallax banner with couple names and portraits                       |
+| 3   | **Countdown** | `Countdown.tsx` | Live timer counting down to the reception                                       |
+| 4   | **Couple**    | `Couple.tsx`    | "Two Souls, One Destiny" — groom & bride portraits with details                 |
+| 5   | **Story**     | `Story.tsx`     | 3-chapter love story timeline                                                   |
+| 6   | **Events**    | `Events.tsx`    | Reception details with date, venue, map, Google Calendar link                   |
+| 7   | **Family**    | `Family.tsx`    | Accordion cards for both families' blessings                                    |
+| 8   | **RSVP**      | `RSVP.tsx`      | WhatsApp, Call, and Navigate buttons                                            |
+| 9   | **Ending**    | `Ending.tsx`    | Closing quote, monogram, couple names, floating particles                       |
 
 Between every section: a gold-divider with star motif (`Divider.tsx`)
 

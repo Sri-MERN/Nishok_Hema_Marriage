@@ -19,8 +19,10 @@ const events: Event[] = [
     date: "Sunday · 31 May 2026",
     time: "6:30 PM onwards",
     venue: "Golden Paradise Thirumana Mandapam",
-    address: "No. 10/6, Sathya Garden, 80 Feet Road, Saligramam, Chennai – 600093",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Golden+Paradise+Thirumana+Mandapam+Saligramam+Chennai",
+    address:
+      "No. 10/6, Sathya Garden, 80 Feet Road, Saligramam, Chennai – 600093",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Golden+Paradise+Thirumana+Mandapam+Saligramam+Chennai",
     calUrl:
       "https://calendar.google.com/calendar/render?action=TEMPLATE&text=S.+Nishok+%26+R.+Hemalatha+Wedding+Reception&dates=20260531T130000Z/20260531T170000Z&details=Wedding+Reception+of+S.+Nishok+%26+R.+Hemalatha&location=Golden+Paradise+Thirumana+Mandapam,+No.+10/6,+Sathya+Garden,+80+Feet+Road,+Saligramam,+Chennai+-+600093",
   },
@@ -123,7 +125,11 @@ export function Events() {
           {events.map((e, i) => {
             const [dayName, fullDate] = e.date.split(" · ");
             return (
-              <Reveal key={e.title} delay={i * 0.15} className="w-full max-w-2xl">
+              <Reveal
+                key={e.title}
+                delay={i * 0.15}
+                className="w-full max-w-2xl"
+              >
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
