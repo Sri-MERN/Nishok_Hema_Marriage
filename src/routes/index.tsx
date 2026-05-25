@@ -20,6 +20,9 @@ const LazyCountdown = lazy(() =>
 const LazyCouple = lazy(() =>
   import("@/components/wedding/Couple").then((m) => ({ default: m.Couple })),
 );
+const LazyGallery = lazy(() =>
+  import("@/components/wedding/Gallery").then((m) => ({ default: m.Gallery })),
+);
 const LazyStory = lazy(() =>
   import("@/components/wedding/Story").then((m) => ({ default: m.Story })),
 );
@@ -119,6 +122,10 @@ function Index() {
         <Divider />
         <Suspense fallback={null}>
           <LazyCouple />
+        </Suspense>
+        <Divider />
+        <Suspense fallback={null}>
+          <LazyGallery />
         </Suspense>
         <Divider />
         <Suspense fallback={null}>

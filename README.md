@@ -21,17 +21,18 @@ npm run preview    # preview production build
 
 The page is one continuous scroll. Each section fades in as you scroll:
 
-| #   | Section       | File            | What it does                                                                    |
-| --- | ------------- | --------------- | ------------------------------------------------------------------------------- |
-| 1   | **Intro**     | `Intro.tsx`     | Full-screen overlay with "Open Invitation" button, monogram, floating particles |
-| 2   | **Hero**      | `Hero.tsx`      | Cinematic parallax banner with couple names and portraits                       |
-| 3   | **Countdown** | `Countdown.tsx` | Live timer counting down to the reception                                       |
-| 4   | **Couple**    | `Couple.tsx`    | "Two Souls, One Destiny" — groom & bride portraits with details                 |
-| 5   | **Story**     | `Story.tsx`     | 3-chapter love story timeline                                                   |
-| 6   | **Events**    | `Events.tsx`    | Reception details with date, venue, map, Google Calendar link                   |
-| 7   | **Family**    | `Family.tsx`    | Accordion cards for both families' blessings                                    |
-| 8   | **RSVP**      | `RSVP.tsx`      | WhatsApp, Call, and Navigate buttons                                            |
-| 9   | **Ending**    | `Ending.tsx`    | Closing quote, monogram, couple names, floating particles                       |
+| #   | Section       | File            | What it does                                                                          |
+| --- | ------------- | --------------- | ------------------------------------------------------------------------------------- |
+| 1   | **Intro**     | `Intro.tsx`     | Full-screen overlay with "Open Invitation" button, monogram, floating particles       |
+| 2   | **Hero**      | `Hero.tsx`      | Cinematic parallax banner with couple names and portraits                             |
+| 3   | **Countdown** | `Countdown.tsx` | Live timer counting down to the reception                                             |
+| 4   | **Couple**    | `Couple.tsx`    | "Two Souls, One Destiny" — updated portrait frame layout featuring cinematic chapters |
+| 5   | **Gallery**   | `Gallery.tsx`   | "Our Moments" — minimalistic interactive visual grid with modal lightbox              |
+| 6   | **Story**     | `Story.tsx`     | 3-chapter love story timeline                                                         |
+| 7   | **Events**    | `Events.tsx`    | Reception details with date, venue, map, Google Calendar link                         |
+| 8   | **Family**    | `Family.tsx`    | Accordion cards for both families' blessings                                          |
+| 9   | **RSVP**      | `RSVP.tsx`      | WhatsApp, Call, and Navigate buttons                                                  |
+| 10  | **Ending**    | `Ending.tsx`    | Closing quote, monogram, couple names, floating particles                             |
 
 Between every section: a gold-divider with star motif (`Divider.tsx`)
 
@@ -43,7 +44,7 @@ Between every section: a gold-divider with star motif (`Divider.tsx`)
 src/
 ├── styles.css               # All colors, fonts, animations (shimmer, glass, particles)
 ├── components/wedding/      # Each section = one file
-│   ├── Couple.tsx           # Groom (S. Nishok) & Bride (R. Hemalatha) portraits
+│   ├── Couple.tsx           # Groom & Bride portraits with cinematic chapters
 │   ├── Hero.tsx             # Top banner
 │   ├── Intro.tsx            # Entry overlay
 │   ├── Ending.tsx           # Closing section
@@ -51,7 +52,7 @@ src/
 │   ├── Story.tsx            # Love timeline
 │   ├── Events.tsx           # Venue & date
 │   ├── Family.tsx           # Family blessings
-│   ├── Gallery.tsx          # Photo grid
+│   ├── Gallery.tsx          # Minimalistic Couple Gallery grid
 │   ├── RSVP.tsx             # Action buttons
 │   ├── Reveal.tsx           # Scroll animation wrapper
 │   └── Ornament.tsx         # Decorative motif
@@ -67,7 +68,7 @@ src/
 **Hero names** — edit `Hero.tsx`  
 **Family member names** — edit `Family.tsx`  
 **Event date/venue** — edit `Events.tsx`  
-**Gallery photos** — replace files in `src/assets/` and update `Gallery.tsx`  
+**Gallery photos** — replace `src/assets/couple_1.webp` and `src/assets/couple_2.webp` to update couple photos  
 **Background music** — replace `src/assets/music.mp3`
 
 ---
